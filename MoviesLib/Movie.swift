@@ -1,0 +1,47 @@
+//
+//  Movie.swift
+//  MoviesLib
+//
+//  Created by Usuário Convidado on 04/09/17.
+//  Copyright © 2017 EricBrito. All rights reserved.
+//
+
+import Foundation
+
+class Movie {
+    var title: String
+    var rating: Double
+    var summary: String
+    var duration: String
+    var imageName: String
+    var categories: [String] = []
+    
+    var imageSmall: String {
+        return self.imageName + "-small.jpg"
+    }
+    
+    var imageWide: String {
+        return self.imageName + "-wide.jpg"
+    }
+    
+    var categoriesDescription: String {
+        return categories.reduce("", {"\($0) | \($1)"})
+    }
+    
+    init (title: String, rating: Double, summary: String, duration: String, imageName: String) {
+        self.title = title
+        self.rating = rating
+        self.summary = summary
+        self.duration = duration
+        self.imageName = imageName
+    }
+    
+    init (title: String, rating: Double, summary: String, duration: String, imageName: String, categories: [String]) {
+        self.title = title
+        self.rating = rating
+        self.summary = summary
+        self.duration = duration
+        self.imageName = imageName
+        self.categories = categories
+    }
+}
